@@ -5,8 +5,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
@@ -40,12 +38,6 @@ function Modal({ image, onClose }: any) {
       onClick={handleBackdropClick}
     >
       <div className="relative w-11/12 h-5/6">
-        <button
-          onClick={onClose}
-          className="absolute top-0 right-0 m-4 text-white text-2xl"
-        >
-          &times;
-        </button>
         <Image
           src={image.src}
           alt={image.alt}
@@ -74,7 +66,7 @@ export function Gallery() {
     <>
       <p
         id="gallery"
-        className="m-4 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500"
+        className="m-4 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500 "
       >
         Kuchnie
       </p>
@@ -83,7 +75,7 @@ export function Gallery() {
         opts={{
           align: 'start',
         }}
-        className="w-full max-w-screen-lg"
+        className="w-11/12"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
@@ -92,8 +84,9 @@ export function Gallery() {
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <CardContent className="flex items-center justify-center p-0">
                     <Image
+                      className="rounded-lg"
                       src={image.src}
                       alt={image.alt}
                       title={image.title}
@@ -113,8 +106,6 @@ export function Gallery() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
       <Modal image={selectedImage} onClose={handleCloseModal} />
     </>

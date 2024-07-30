@@ -14,7 +14,7 @@ export function FAQ() {
       >
         FAQ
       </p>
-      <Accordion type="single" collapsible className="w-1/2">
+      <Accordion type="single" collapsible className="w-4/5">
         <AccordionItem value="item-1">
           <AccordionTrigger>
             1. Jakie rodzaje mebli na wymiar oferujecie?

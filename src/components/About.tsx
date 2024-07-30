@@ -8,10 +8,13 @@ export function About() {
         O Nas
       </p>
       <p className="m-4">
-        <strong>Pin Studio</strong> - producent mebli kuchennych i mebli na
-        wymiar. Specjalizujemy się w projektowaniu, produkcji, oraz montażu
-        mebli na wymiar. Wykonujemy na indywidualne zamówienie meble kuchenne,
-        szafy, garderoby, meble łazienkowe, do pokoju dziecięcego oraz salonu.
+        <strong className="bg-gradient-to-r text-transparent bg-clip-text from-red-500 to-violet-500">
+          Pin Studio
+        </strong>
+        - producent mebli kuchennych i mebli na wymiar. Specjalizujemy się w
+        projektowaniu, produkcji, oraz montażu mebli na wymiar. Wykonujemy na
+        indywidualne zamówienie meble kuchenne, szafy, garderoby, meble
+        łazienkowe, do pokoju dziecięcego oraz salonu.
       </p>
       <p className="m-4">
         Do produkcji naszych mebli wykorzystujemy najnowsze maszyny stolarskie
