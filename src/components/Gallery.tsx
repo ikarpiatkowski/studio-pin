@@ -1,146 +1,116 @@
-"use client";
-import Image from "next/image";
-import { useState } from "react";
+'use client';
 
-export default function Gallery() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+import { Card, CardContent } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import Image from 'next/image';
+import { useState, useRef } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
 
-  const images = [
-    { src: "/img9.jpg", alt: "Image 1", title: "Stunning Landscape" },
-    { src: "/img2.jpg", alt: "Image 2", title: "Vibrant Cityscape" },
-    { src: "/img3.jpg", alt: "Image 3", title: "Serene Nature" },
-    { src: "/img4.jpg", alt: "Image 4", title: "Architectural Wonder" },
-    { src: "/img5.jpg", alt: "Image 5", title: "Stunning Landscape" },
-    { src: "/img6.jpg", alt: "Image 6", title: "Vibrant Cityscape" },
-    { src: "/img7.jpg", alt: "Image 7", title: "Serene Nature" },
-    { src: "/img8.jpg", alt: "Image 8", title: "Architectural Wonder" },
-    { src: "/img10.jpg", alt: "Image 10", title: "Serene Nature" },
-    { src: "/img12.jpg", alt: "Image 12", title: "Architectural Wonder" },
-  ];
+const images = [
+  { src: '/img9.jpg', alt: 'Image 1', title: 'Stunning Landscape' },
+  { src: '/img2.jpg', alt: 'Image 2', title: 'Vibrant Cityscape' },
+  { src: '/img3.jpg', alt: 'Image 3', title: 'Serene Nature' },
+  { src: '/img4.jpg', alt: 'Image 4', title: 'Architectural Wonder' },
+  { src: '/img5.jpg', alt: 'Image 5', title: 'Stunning Landscape' },
+  { src: '/img6.jpg', alt: 'Image 6', title: 'Vibrant Cityscape' },
+  { src: '/img7.jpg', alt: 'Image 7', title: 'Serene Nature' },
+  { src: '/img8.jpg', alt: 'Image 8', title: 'Architectural Wonder' },
+  { src: '/img10.jpg', alt: 'Image 10', title: 'Serene Nature' },
+  { src: '/img12.jpg', alt: 'Image 12', title: 'Architectural Wonder' },
+];
 
-  const openModal = (index: any) => {
-    setCurrentImageIndex(index);
-    setIsModalOpen(true);
+function Modal({ image, onClose }: any) {
+  if (!image) return null;
+
+  const handleBackdropClick = (e: any) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
   };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const nextImages = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 4) % images.length);
-  };
-
-  const previousImages = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 4) % images.length);
-  };
-
-  const displayedImages = images.slice(
-    currentImageIndex,
-    currentImageIndex + 4
-  );
 
   return (
-    <section className="container mx-auto py-8 md:py-10 lg:py-12">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
-        {displayedImages.map((image, index) => (
-          <div
-            key={index}
-            className="group relative overflow-hidden rounded-lg"
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={600}
-              height={400}
-              className="w-full h-60 md:h-72 lg:h-80 object-cover transition-all duration-300 group-hover:scale-105 cursor-pointer"
-              onClick={() => openModal(currentImageIndex + index)}
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-background/80 px-4 py-3 transition-all duration-300 group-hover:bg-background/90">
-              <h3 className="text-base font-medium text-foreground line-clamp-1">
-                {image.title}
-              </h3>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-8 flex justify-center space-x-2">
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
+      onClick={handleBackdropClick}
+    >
+      <div className="relative w-11/12 h-5/6">
         <button
-          className="px-4 py-2 flex items-center bg-red-500 rounded-lg"
-          onClick={previousImages}
+          onClick={onClose}
+          className="absolute top-0 right-0 m-4 text-white text-2xl"
         >
-          <ArrowLeftIcon className="h-4 w-4" />
-          Wstecz
+          &times;
         </button>
-        <button
-          className="px-4 py-2 flex items-center bg-red-500 rounded-lg"
-          onClick={nextImages}
-        >
-          Dalej
-          <ArrowRightIcon className="h-4 w-4" />
-        </button>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          title={image.title}
+          layout="fill"
+          objectFit="contain"
+        />
       </div>
-
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur"
-          onClick={closeModal}
-        >
-          <div className="relative bg-[#E84545] p-6 rounded-lg">
-            <Image
-              src={images[currentImageIndex].src}
-              alt={images[currentImageIndex].alt}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover rounded-lg"
-            />
-            <h3 className="mt-4 text-base font-medium text-foreground">
-              {images[currentImageIndex].title}
-            </h3>
-          </div>
-        </div>
-      )}
-    </section>
+    </div>
   );
 }
 
-function ArrowRightIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 12h14" />
-      <path d="m12 5 7 7-7 7" />
-    </svg>
-  );
-}
+export function Gallery() {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
 
-function ArrowLeftIcon(props: any) {
+  const handleImageClick = (image: any) => {
+    setSelectedImage(image);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M19 12H5" />
-      <path d="M12 19l-7-7 7-7" />
-    </svg>
+    <>
+      <Carousel
+        plugins={[plugin.current]}
+        opts={{
+          align: 'start',
+        }}
+        className="w-full max-w-screen-lg"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
+        <CarouselContent>
+          {images.map((image, index) => (
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                <Card>
+                  <CardContent className="flex aspect-square items-center justify-center p-6">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      title={image.title}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => handleImageClick(image)}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      <Modal image={selectedImage} onClose={handleCloseModal} />
+    </>
   );
 }
