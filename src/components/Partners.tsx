@@ -3,7 +3,10 @@ import Image from 'next/image';
 export function Partners() {
   return (
     <>
-      <p className="m-4 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500">
+      <p
+        id="partners"
+        className="m-4 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500"
+      >
         Nasi Partnerzy
       </p>
       <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center items-center">

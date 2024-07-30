@@ -72,6 +72,12 @@ export function Gallery() {
 
   return (
     <>
+      <p
+        id="gallery"
+        className="m-4 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500"
+      >
+        Kuchnie
+      </p>
       <Carousel
         plugins={[plugin.current]}
         opts={{

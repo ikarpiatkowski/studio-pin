@@ -23,6 +23,27 @@ export function Footer() {
             </Link>
             <ModeToggle />
           </div>
+          <div className="flex space-x-2">
+            <Link
+              href="https://www.facebook.com/studiopintorun"
+              prefetch={false}
+            >
+              <Image
+                src="/facebook.svg"
+                alt="facebook"
+                height={16}
+                width={16}
+              />
+            </Link>
+            <Link href="https://www.instagram.com/" prefetch={false}>
+              <Image
+                src="/instagram.svg"
+                alt="instagram"
+                height={16}
+                width={16}
+              />
+            </Link>
+          </div>
           <p className="text-sm">
             Studio PIN jest wiodącym producentem mebli, tworzącym wysokiej
             jakości i zrównoważone elementy do nowoczesnych przestrzeni
@@ -42,15 +63,18 @@ export function Footer() {
           </Link>
         </div>
         <div className="grid gap-2">
-          <h4 className="font-semibold">Media społecznościowe</h4>
-          <Link href="#" className="hover:underline" prefetch={false}>
-            Facebook
+          <h4 className="font-semibold">Sekcje</h4>
+          <Link href="#aboutus" className="hover:underline" prefetch={false}>
+            O Nas
           </Link>
-          <Link href="#" className="hover:underline" prefetch={false}>
-            Instagram
+          <Link href="#gallery" className="hover:underline" prefetch={false}>
+            Galeria
           </Link>
-          <Link href="#" className="hover:underline" prefetch={false}>
-            Twitter
+          <Link href="#partners" className="hover:underline" prefetch={false}>
+            Nasi Partnerzy
+          </Link>
+          <Link href="#faq" className="hover:underline" prefetch={false}>
+            FAQ
           </Link>
         </div>
         <div className="grid gap-2">
