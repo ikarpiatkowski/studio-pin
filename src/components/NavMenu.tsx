@@ -23,7 +23,7 @@ export function NavMenu() {
               <ListItem
                 key="kitchen-photo"
                 title="Zdjęcia kuchni"
-                href="/kuchnie/zdjęcia"
+                href="/kuchnie/zdjecia"
               >
                 Zdjęcia wykonanych projektów kuchni.
               </ListItem>
@@ -44,7 +44,7 @@ export function NavMenu() {
               <ListItem
                 key="cabinets-photo"
                 title="Zdjęcia Szaf"
-                href="/szafy/zdjęcia"
+                href="/szafy/zdjecia"
               >
                 Zdjęcia wykonanych projektów szaf wnękowych.
               </ListItem>
@@ -65,14 +65,14 @@ export function NavMenu() {
               <ListItem
                 key="bathroom-photos"
                 title="Zdjęcia łazienek"
-                href="/łazienki/zdjęcia"
+                href="/lazienki/zdjecia"
               >
                 Zdjęcia wykonanych projektów łazienek.
               </ListItem>
               <ListItem
                 key="bathroom-visualizations"
                 title="Wizualizacje łazienek"
-                href="/łazienki/wizualizacje"
+                href="/lazienki/wizualizacje"
               >
                 Wizualizacje 3D projektów łazienek.
               </ListItem>
