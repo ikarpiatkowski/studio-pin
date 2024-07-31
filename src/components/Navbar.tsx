@@ -6,7 +6,13 @@ export function Navbar() {
   return (
     <nav className="flex p-3 text-xl bg-red-500 items-center justify-between text-slate-900 rounded-b-3xl">
       <Link href="/" className="flex space-x-2 items-center">
-        <Image src="/logo.png" alt="logo" width="50" height="50" />
+        <Image
+          src="/logo.png"
+          alt="logo"
+          width="50"
+          height="50"
+          className="rounded-lg"
+        />
         <h1 className="text-3xl font-bold underline decoration-dashed decoration-sky-500">
           Studio PIN
         </h1>

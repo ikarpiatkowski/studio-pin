@@ -20,7 +20,7 @@ export function Partners() {
     <>
       <p
         id="partners"
-        className="m-4 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500"
+        className="m-8 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500"
       >
         Nasi Partnerzy
       </p>
