@@ -10,11 +10,11 @@ export function FAQ() {
     <>
       <p
         id="faq"
-        className="m-4 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500"
+        className="m-8 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500"
       >
         FAQ
       </p>
-      <Accordion type="single" collapsible className="w-4/5">
+      <Accordion type="single" collapsible className="w-11/12">
         <AccordionItem value="item-1">
           <AccordionTrigger>
             1. Jakie rodzaje mebli na wymiar oferujecie?
@@ -136,12 +136,12 @@ export function FAQ() {
             realizacji.
           </AccordionContent>
         </AccordionItem>
+        <p className="py-4 font-bold">
+          Jeśli mają Państwo dodatkowe pytania, prosimy o kontakt telefoniczny
+          lub e-mailowy. Jesteśmy do Państwa dyspozycji i chętnie udzielimy
+          wszelkich informacji.
+        </p>
       </Accordion>
-      <p className="m-4 font-bold">
-        Jeśli mają Państwo dodatkowe pytania, prosimy o kontakt telefoniczny lub
-        e-mailowy. Jesteśmy do Państwa dyspozycji i chętnie udzielimy wszelkich
-        informacji.
-      </p>
     </>
   );
 }

@@ -11,16 +11,16 @@ import { useState, useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 
 const images = [
-  { src: '/img9.jpg', alt: 'Image 1', title: 'Stunning Landscape' },
-  { src: '/img2.jpg', alt: 'Image 2', title: 'Vibrant Cityscape' },
-  { src: '/img3.jpg', alt: 'Image 3', title: 'Serene Nature' },
-  { src: '/img4.jpg', alt: 'Image 4', title: 'Architectural Wonder' },
-  { src: '/img5.jpg', alt: 'Image 5', title: 'Stunning Landscape' },
-  { src: '/img6.jpg', alt: 'Image 6', title: 'Vibrant Cityscape' },
-  { src: '/img7.jpg', alt: 'Image 7', title: 'Serene Nature' },
-  { src: '/img8.jpg', alt: 'Image 8', title: 'Architectural Wonder' },
-  { src: '/img10.jpg', alt: 'Image 10', title: 'Serene Nature' },
-  { src: '/img12.jpg', alt: 'Image 12', title: 'Architectural Wonder' },
+  { src: '/gallery1.jpg', alt: 'Image 1', title: 'Stunning Landscape' },
+  { src: '/gallery2.jpg', alt: 'Image 2', title: 'Vibrant Cityscape' },
+  { src: '/gallery3.jpg', alt: 'Image 3', title: 'Serene Nature' },
+  { src: '/gallery4.jpg', alt: 'Image 4', title: 'Architectural Wonder' },
+  { src: '/gallery5.jpg', alt: 'Image 5', title: 'Stunning Landscape' },
+  { src: '/gallery6.jpg', alt: 'Image 6', title: 'Vibrant Cityscape' },
+  { src: '/gallery7.jpg', alt: 'Image 7', title: 'Serene Nature' },
+  { src: '/gallery8.jpg', alt: 'Image 8', title: 'Architectural Wonder' },
+  { src: '/gallery9.jpg', alt: 'Image 10', title: 'Serene Nature' },
+  { src: '/gallery10.jpg', alt: 'Image 12', title: 'Architectural Wonder' },
 ];
 
 function Modal({ image, onClose }: any) {
@@ -66,7 +66,7 @@ export function Gallery() {
     <>
       <p
         id="gallery"
-        className="m-4 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500 "
+        className="m-8 font-bold text-4xl underline decoration-4 decoration-dotted decoration-sky-500"
       >
         Galeria
       </p>

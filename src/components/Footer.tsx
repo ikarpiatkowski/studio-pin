@@ -18,31 +18,29 @@ export function Footer() {
         <div className="flex flex-col gap-4">
           <div className="flex space-x-2 items-center">
             <Link href="#" className="flex items-center gap-2" prefetch={false}>
-              <Image src="/logo.png" alt="logo" height={32} width={32} />
+              <Image src="/logo.png" alt="logo" height={64} width={64} />
               <span className="font-bold text-xl">Studio PIN</span>
             </Link>
-            <ModeToggle />
-          </div>
-          <div className="flex space-x-2">
             <Link
               href="https://www.facebook.com/studiopintorun"
               prefetch={false}
             >
               <Image
-                src="/facebook.svg"
+                src="/facebook-color.svg"
                 alt="facebook"
-                height={16}
-                width={16}
+                height={32}
+                width={32}
               />
             </Link>
             <Link href="https://www.instagram.com/" prefetch={false}>
               <Image
-                src="/instagram.svg"
+                src="/instagram-color.svg"
                 alt="instagram"
-                height={16}
-                width={16}
+                height={32}
+                width={32}
               />
             </Link>
+            <ModeToggle />
           </div>
           <p className="text-sm">
             Studio PIN jest wiodącym producentem mebli, tworzącym wysokiej
@@ -82,9 +80,12 @@ export function Footer() {
           <p>
             PIN STUDIO Sp. z o.o. <br />
             ul. Grudziądzka 124/126 87-100 Toruń <br />
-            Telefon: 56 660 02 76 <br />
-            Telefon: 531 555 763 , 531 480 514 <br />
-            E-mail: sklep@studiopin.pl
+            Telefon: <a href="tel:56 660 02 76">56 660 02 76</a>
+            <br />
+            Telefon: <a href="tel:531 555 763">531 555 763</a>,{' '}
+            <a href="tel:531 480 514">531 480 514</a>
+            <br />
+            E-mail: <a href="mailto:sklep@studiopin.pl">sklep@studiopin.pl</a>
           </p>
         </div>
       </div>
