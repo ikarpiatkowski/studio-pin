@@ -10,6 +10,17 @@ import Image from 'next/image';
 import { useState, useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 
+interface ImageData {
+  src: string;
+  alt: string;
+  title: string;
+}
+
+interface ModalProps {
+  image: ImageData | null;
+  onClose: () => void;
+}
+
 const images = [
   { src: '/gallery1.jpg', alt: 'Image 1', title: 'Stunning Landscape' },
   { src: '/gallery2.jpg', alt: 'Image 2', title: 'Vibrant Cityscape' },
@@ -23,10 +34,10 @@ const images = [
   { src: '/gallery10.jpg', alt: 'Image 12', title: 'Architectural Wonder' },
 ];
 
-function Modal({ image, onClose }: any) {
+function Modal({ image, onClose }: ModalProps) {
   if (!image) return null;
 
-  const handleBackdropClick = (e: any) => {
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -51,10 +62,10 @@ function Modal({ image, onClose }: any) {
 }
 
 export function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
 
-  const handleImageClick = (image: any) => {
+  const handleImageClick = (image: ImageData) => {
     setSelectedImage(image);
   };
 
