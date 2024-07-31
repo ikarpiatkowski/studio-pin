@@ -24,7 +24,7 @@ export function Partners() {
       >
         Nasi Partnerzy
       </p>
-      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center items-center">
+      <section className="w-11/12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center items-center">
         {partners.map(({ src, alt }) => (
           <Image
             key={src}
