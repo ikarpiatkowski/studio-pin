@@ -1,5 +1,20 @@
 import Image from 'next/image';
 
+const partners = [
+  { src: '/peka.png', alt: 'Logo  Peka' },
+  { src: '/blum.png', alt: 'Logo  Blum' },
+  { src: '/gtv.png', alt: 'Logo  GTV' },
+  { src: '/nomet.png', alt: 'Logo  Nomet' },
+  { src: '/stolzen.png', alt: 'Logo  Stolzen' },
+  { src: '/swisskrono.png', alt: 'Logo  Swiss Krono' },
+  { src: '/niemann.png', alt: 'Logo Niemann' },
+  { src: '/falmec.png', alt: 'Logo Falmec' },
+  { src: '/eegger.png', alt: 'Logo Eegger' },
+  { src: '/proform.png', alt: 'Logo Proform' },
+  { src: '/metasofa.png', alt: 'Logo Metasofa' },
+  { src: '/franke.png', alt: 'Logo Franke' },
+];
+
 export function Partners() {
   return (
     <>
@@ -10,48 +25,17 @@ export function Partners() {
         Nasi Partnerzy
       </p>
       <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center items-center">
-        <Image
-          src="/peka.png"
-          alt="Logo partnera Peka"
-          width="200"
-          height="200"
-        />
-        <Image
-          src="/blum.png"
-          alt="Logo partnera Blum"
-          width="200"
-          height="200"
-        />
-        <Image
-          src="/gtv.png"
-          alt="Logo partnera GTV"
-          width="200"
-          height="200"
-        />
-        <Image
-          src="/nomet.png"
-          alt="Logo partnera Nomet"
-          width="200"
-          height="200"
-        />
-        <Image
-          src="/stolzen.png"
-          alt="Logo partnera Stolzen"
-          width="200"
-          height="200"
-        />
-        <Image
-          src="/swisskrono.png"
-          alt="Logo partnera Swiss Krono"
-          width="200"
-          height="200"
-        />
-        <Image src="/falmec.png" alt="Partners" width="200" height="200" />
-        <Image src="/niemann.png" alt="Partners" width="200" height="200" />
-        <Image src="/eegger.png" alt="Partners" width="200" height="200" />
-        <Image src="/proform.png" alt="Partners" width="200" height="200" />
-        <Image src="/metasofa.png" alt="Partners" width="200" height="200" />
-        <Image src="/franke.png" alt="Partners" width="200" height="200" />
+        {partners.map(({ src, alt }) => (
+          <Image
+            key={src}
+            src={src}
+            alt={alt}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-full h-auto"
+          />
+        ))}
       </section>
     </>
   );
